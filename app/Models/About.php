@@ -31,6 +31,6 @@ class About extends Model
 
     public function hotelFiles()
     {
-        return $this->hasMany(HotelFile::class);
+        return $this->hasMany(Hotelfile::class);
     }
 }
