@@ -1,19 +1,46 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="">
+
+
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-center h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                    <a href="{{ route('home') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 icon-blue green-hover">
+                            <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                            <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                          </svg>
+
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+
+                    <x-nav-link href="{{ route('homeAdmin') }}" :active="request()->routeIs('homeAdmin')">
+                        {{ __('Home') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('about-us-admin') }}" :active="request()->routeIs('about-us-admin')">
+                        {{ __('Sobre nosotros') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('services-admin') }}" :active="request()->routeIs('services-admin')">
+                        {{ __('Nuestros servicios') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('administrar-habitaciones') }}" :active="request()->routeIs('administrar-habitaciones')">
+                        {{ __('Habitaciones') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('administrar-huespedes') }}" :active="request()->routeIs('administrar-huespedes')">
+                        {{ __('Huespedes') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('administrar-huespedes') }}" :active="request()->routeIs('administrar-huespedes')">
+                        {{ __('Reservas') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -76,9 +103,15 @@
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            <span class="inline-flex rounded-md">
+                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 dark:active:bg-gray-700 transition ease-in-out duration-150">
+                                    Administrador
+
+                                    <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
                                 </button>
+                            </span>
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 dark:active:bg-gray-700 transition ease-in-out duration-150">
