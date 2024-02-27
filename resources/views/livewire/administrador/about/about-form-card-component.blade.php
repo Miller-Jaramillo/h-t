@@ -13,10 +13,10 @@
                         {{-- titulo formulario --}}
                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6 flex-row mt-5">
 
-                            <div class="border-b border-gray-100 pb-2  ">
+                            <div class="border-b border-gray-100  ">
                                 <h2
                                     class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                    About</h2>
+                                    Tarjeta de presentacion</h2>
                                 <p
                                     class="mt-2 text-justify block text-sm font-medium leading-6 text-emerald-400 dark:text-emerald-700 tracking-widest">
                                     Dinos quien eres.. se publicaran en la pagina principal
@@ -30,11 +30,11 @@
                             <form wire:submit.prevent="submitForm"> {{-- <form method="POST" action="{{ route('registrar-propuesta.submitForm') }}"> --}}
 
                                 {{-- inicio del grid --}}
-                                <div class="mt-5 grid grid-cols-1 sm:grid-cols-3   gap-x-10 ">
+                                <div class="mt-2 grid grid-cols-1 sm:grid-cols-3   gap-x-10 ">
                                     <div>
                                         <x-label for="name"
                                             class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                            Nombre del hotel</x-label>
+                                            Titulo de tu presentación</x-label>
                                         <div class="mt-1">
                                             <x-input type="text" wire:model="name" name="name" id="name"
                                                 autocomplete="given-name"
@@ -46,7 +46,7 @@
 
                                 </div>
 
-                                <div class="">
+                                <div class="mt-2">
                                     <x-label for="description"
                                         class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase">
                                         Descripcion</x-label>
@@ -67,55 +67,6 @@
 
                                 </div>
 
-
-                                <div>
-                                    <x-label for="whatsapp"
-                                        class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                        Whatsapp</x-label>
-                                    <div class="mt-1">
-                                        <x-input type="text" wire:model="whatsapp" name="whatsapp" id="whatsapp"
-                                            autocomplete="given-name"
-                                            class=" block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-indigo-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600
-                                                text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase" />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <x-label for="facebook"
-                                        class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                        Facebook</x-label>
-
-                                    <div class="mt-1">
-                                        <x-input type="text" wire:model="facebook" name="facebook" id="facebook"
-                                            autocomplete="given-name"
-                                            class=" block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-indigo-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600
-                                                text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase" />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <x-label for="instagram"
-                                        class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                        Instagram</x-label>
-                                    <div class="mt-1">
-                                        <x-input type="text" wire:model="instagram" name="instagram" id="instagram"
-                                            autocomplete="given-name"
-                                            class=" block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-indigo-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600
-                                                text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase" />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <x-label for="tiktok"
-                                        class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                        Tik-Tok</x-label>
-                                    <div class="mt-1">
-                                        <x-input type="text" wire:model="tiktok" name="tiktok" id="tiktok"
-                                            autocomplete="given-name"
-                                            class=" block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-indigo-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600
-                                                text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase" />
-                                    </div>
-                                </div>
 
                                 <div class="mt-5 grid grid-cols-1 sm:grid-cols-1">
                                     <div class="mt-4 ">

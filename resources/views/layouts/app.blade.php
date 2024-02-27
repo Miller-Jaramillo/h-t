@@ -19,12 +19,12 @@
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased   bg-gradient-to-br from-blue-50 via-white to-gray-100 dark:from-zinc-950 dark:via-blue-950  dark:to-zinc-950">
+<body
+    class="font-sans antialiased   bg-gradient-to-br from-blue-50 via-white to-gray-100 dark:from-zinc-950 dark:via-blue-950  dark:to-zinc-950">
     <x-banner />
 
 
-    <div
-        class="min-h-screen">
+    <div class="min-h-screen">
 
 
 
@@ -32,8 +32,7 @@
         <!-- Page Heading -->
         @if (isset($header))
             <header class="">
-                <div
-                    class="grid grid-cols-1 sm:grid-cols-3  max-w-8xl mx-auto py-4 px-4 sm:px-6 lg:px-8  ">
+                <div class="grid grid-cols-1 sm:grid-cols-3  max-w-8xl mx-auto py-4 px-4 sm:px-6 lg:px-8  ">
 
                     <div>
 
@@ -43,12 +42,11 @@
                     </div>
 
 
-                    <div class="col-span-1 flex items-center justify-center sm:justify-end ">
+                    <div class="col-span-1 flex items-center justify-center sm:justify-center ">
 
-                        <div class="grid grid-cols-1 sm:grid-cols-1">
 
-                            <div class="flex justify-center">
-                                <button id="toggleThemeButton"
+                        <div class="flex justify-center">
+                            <button id="toggleThemeButton"
                                 class=" flex motion-safe:hover:scale-[2] items-center justify-center p-2 rounded-xl transition duration-300 ease-in-out focus:outline-none
                                           "
                                 style=" color: rgb(24, 109, 220);">
@@ -58,11 +56,6 @@
                                         d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
                                 </svg>
                             </button>
-                            </div>
-                            <div>
-                            <x-label>ADMINISTRADOR</x-label>
-
-                            </div>
                         </div>
                     </div>
 

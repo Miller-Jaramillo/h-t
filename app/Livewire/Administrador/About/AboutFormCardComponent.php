@@ -15,10 +15,7 @@ class AboutFormCardComponent extends Component
 
     public $name;
     public $description;
-    public $whatsapp;
-    public $facebook;
-    public $instagram;
-    public $tiktok;
+
     public $files = [];
     public $previews = [];
     public $message;
@@ -61,10 +58,6 @@ class AboutFormCardComponent extends Component
             $about = new About();
             $about->name = $this->name;
             $about->description = $this->description;
-            $about->whatsapp = $this->whatsapp;
-            $about->facebook = $this->facebook;
-            $about->instagram = $this->instagram;
-            $about->tiktok = $this->tiktok;
             $about->status = 'Abierto'; // Valor por defecto
 
             // Guardar la instancia de About
@@ -79,13 +72,19 @@ class AboutFormCardComponent extends Component
                 ]);
             }
 
-            
+            $this->closeForm();
 
             // Resetear los campos
-            $this->reset(['name', 'description', 'whatsapp', 'facebook', 'instagram', 'tiktok', 'files', 'previews']);
+            $this->reset(['name', 'description', 'files', 'previews']);
 
             $this->message = "¡El registro ha sido creado!";
         }
+    }
+
+
+    public function closeForm()
+    {
+        return redirect('about-us-admin');
     }
 
 }

@@ -10,7 +10,7 @@ class="flex justify-center">
                 alt="{{ Auth::user()->name }}">
         </div>
         <label class="ml-3  text-2xl font-bold uppercase tracking-wide text-gray-900 dark:text-gray-100">
-            {{ Auth::user()->name }}👽
+            {{ Auth::user()->name }}
         </label>
     </div>
 </div>

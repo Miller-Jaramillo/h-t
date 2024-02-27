@@ -22,7 +22,7 @@
              <div>
                  <x-label
                      class="  mx-auto max-w-6xl  mt-10 py-2 px-2 text-md uppercase font-bold dark:font-bold text-gray-900 dark:text-gray-200">
-                     Nuestros servicios😅</x-label>
+                     Nuestros servicios</x-label>
 
                  @livewire('public.services-us-component')
              </div>
@@ -30,12 +30,12 @@
              <div>
                  <x-label
                      class="  mx-auto max-w-6xl  mt-10 py-2 px-2 text-md uppercase font-bold dark:font-bold text-gray-900 dark:text-gray-200">
-                     Habitaciones🛏️ </x-label>
+                     Habitaciones</x-label>
 
                  @livewire('inf-reservas-component')
              </div>
 
-             @include('footer')
+             @include('footer-admin')
          </div>
      </div>
 

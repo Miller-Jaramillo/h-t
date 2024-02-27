@@ -400,7 +400,6 @@
 
 
                     {{-- Botón de cancelar --}}
-                    <button wire:click="closeForm">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -431,13 +430,13 @@
                                         {{-- titulo formulario --}}
                                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6 flex-row mt-5">
 
-                                            <div class="border-b border-gray-100 pb-2  ">
+                                            <div class="border-b border-gray-100  ">
                                                 <h2
                                                     class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                                    About</h2>
+                                                    Tarjeta de presentacion</h2>
                                                 <p
                                                     class="mt-2 text-justify block text-sm font-medium leading-6 text-emerald-400 dark:text-emerald-700 tracking-widest">
-                                                    Dinos quien eres.. se publicaran en la pagina principal
+                                                    Edita tu tarjeta.. se publicaran en la pagina principal
                                                 </p>
 
                                             </div>
@@ -448,11 +447,11 @@
                                             <form wire:submit.prevent="update"> {{-- <form method="POST" action="{{ route('registrar-propuesta.submitForm') }}"> --}}
 
                                                 {{-- inicio del grid --}}
-                                                <div class="mt-5 grid grid-cols-1 sm:grid-cols-3   gap-x-10 ">
+                                                <div class="mt-2 grid grid-cols-1 sm:grid-cols-3   gap-x-10 ">
                                                     <div>
                                                         <x-label for="name"
                                                             class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                                            Nombre del hotel</x-label>
+                                                            Titulo de tu presentación</x-label>
                                                         <div class="mt-1">
                                                             <x-input type="text" wire:model="name" name="name"
                                                                 id="name" autocomplete="given-name"
@@ -464,7 +463,7 @@
 
                                                 </div>
 
-                                                <div class="">
+                                                <div class="mt-2">
                                                     <x-label for="description"
                                                         class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase">
                                                         Descripcion</x-label>

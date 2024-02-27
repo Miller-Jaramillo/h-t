@@ -81,10 +81,7 @@ class AboutShowComponent extends Component
         $this->editAboutId = $about->id;
         $this->name = $about->name;
         $this->description = $about->description;
-        $this->whatsapp = $about->whatsapp;
-        $this->facebook = $about->facebook;
-        $this->instagram = $about->instagram;
-        $this->tiktok = $about->tiktok;
+
 
         $this->previews = $about->hotelFiles
             ->map(function ($file) {
@@ -98,17 +95,13 @@ class AboutShowComponent extends Component
     public function update()
     {
         // Validar si hay algún campo vacío
-        if (empty($this->name) || empty($this->description) || empty($this->whatsapp) || empty($this->facebook) || empty($this->instagram) || empty($this->tiktok))  {
+        if (empty($this->name) || empty($this->description))  {
             $this->message = '¡Debes completar todos los campos!';
         } else {
             // Validación de campos
             $this->validate([
                 'name' => 'required',
                 'description' => 'required',
-                'whatsapp' => 'required|string',
-                'facebook' => 'required|string',
-                'instagram' => 'required|string',
-                'tiktok' => 'required|string',
 
             ]);
 
@@ -119,10 +112,7 @@ class AboutShowComponent extends Component
             $about->update([
                 'name' => $this->name,
                 'description' => $this->description,
-                'whatsapp' => $this->whatsapp,
-                'facebook' => $this->facebook,
-                'instagram' => $this->instagram,
-                'tiktok' => $this->tiktok,
+
 
             ]);
 

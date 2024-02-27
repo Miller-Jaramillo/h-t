@@ -8,10 +8,6 @@
 
     @livewire('administrador.about.about-show-component')
 
-   @if ($abouts->count())
-    @livewire('administrador.about.about-form-info-component')
-
-   @endif
 
 
 

@@ -16,7 +16,7 @@
                             <div class="border-b border-gray-100 pb-2  ">
                                 <h2
                                     class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                    About</h2>
+                                    Tarjeta de presentacion</h2>
                                 <p
                                     class="mt-2 text-justify block text-sm font-medium leading-6 text-emerald-400 dark:text-emerald-700 tracking-widest">
                                     Dinos quien eres.. se publicaran en la pagina principal
@@ -34,7 +34,7 @@
                                     <div>
                                         <x-label for="name"
                                             class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
-                                            Nombre del hotel</x-label>
+                                            Titulo de tu presentación</x-label>
                                         <div class="mt-1">
                                             <x-input type="text" wire:model="name" name="name" id="name"
                                                 autocomplete="given-name"
