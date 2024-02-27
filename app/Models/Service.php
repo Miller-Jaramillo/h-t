@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
+
+    protected $table = 'services';
+
+    protected $fillable = [
+        'name',
+
+        'description',
+        'happy_message',
+        'status',
+
+    ];
+
+    public function services()
+    {
+        return $this->hasMany(Servicefile::class);
+    }
 }
