@@ -66,20 +66,15 @@
                                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-4 px-4 sm:px-6 py-2 ">
 
 
-
-
-                                            <div id="carousel_{{ $loop->index }}"
-                                                class="mt-2 carousel slide flex motion-safe:hover:scale-[1.05] "
-                                                data-bs-ride="carousel">
+                                            <div id="carousel_{{ $loop->index }}" class="mt-2 carousel slide flex motion-safe:hover:scale-[1.05]" data-bs-ride="carousel">
                                                 <div class="carousel-inner">
                                                     @foreach ($about->hotelFiles->chunk(2) as $index => $chunk)
                                                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                                             <div class="grid grid-cols-2 gap-2">
                                                                 @foreach ($chunk as $imagen)
-                                                                    <div
-                                                                        class="{{ count($chunk) === 1 ? 'col-span-2 flex items-center justify-center' : '' }}">
+                                                                    <div class="{{ count($chunk) === 1 ? 'col-span-2 flex items-center justify-center' : '' }}">
                                                                         <img src="{{ asset('storage/' . $imagen->file_path) }}"
-                                                                            class="block object-cover h-80 w-max sm:rounded-lg rounded-md border-2 border-indigo-100 {{ count($chunk) === 1 ? 'mx-auto' : '' }}"
+                                                                            class="block object-cover h-80 {{ count($chunk) === 1 ? 'w-full' : 'w-max sm:rounded-lg rounded-md' }} border-2 border-indigo-100 {{ count($chunk) === 1 ? 'mx-auto' : '' }}"
                                                                             alt="...">
                                                                     </div>
                                                                 @endforeach
@@ -88,17 +83,16 @@
                                                     @endforeach
                                                 </div>
                                                 <!-- Botones de control del carousel -->
-                                                <button class="carousel-control-prev" type="button"
-                                                    data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="prev">
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Previous</span>
                                                 </button>
-                                                <button class="carousel-control-next" type="button"
-                                                    data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="next">
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="next">
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Next</span>
                                                 </button>
                                             </div>
+
 
 
                                             <div
@@ -137,7 +131,7 @@
 
 
                                             <div class="flex mt-4 sm:justify-center sm:mt-0">
-                                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                                                <a href="{{ Auth::User()->facebook }}" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
 
                                                     <!-- Facebook -->
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" style="color: #1877f2"
@@ -147,7 +141,7 @@
                                                     </svg>
                                                     <span class="sr-only">Facebook page</span>
                                                 </a>
-                                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                                                <a href="{{ Auth::User()->instagram }}" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                                                     <!-- Instagram -->
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" style="color: #c13584"
                                                         viewBox="0 0 24 24">
@@ -157,7 +151,7 @@
 
                                                     <span class="sr-only">Instagram</span>
                                                 </a>
-                                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                                                <a href="https://wa.me/57{{ Auth::User()->whatsapp }}/?text=Hola%20quiero%20hacer%20una%20reserva" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                                                     <!-- Whatsapp -->
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" style="color: #128c7e"
                                                         viewBox="0 0 24 24">
@@ -166,7 +160,7 @@
                                                     </svg>
                                                     <span class="sr-only">WhatsApp</span>
                                                 </a>
-                                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                                                <a href="{{ Auth::User()->tiktok }}" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                                                     <!-- TikTok -->
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-4 w-4"
                                                         style="color: #6a76ac">

@@ -49,18 +49,15 @@
 
 
 
-                                            <div id="carousel_{{ $loop->index }}"
-                                                class="mt-2 carousel slide flex motion-safe:hover:scale-[1.05] "
-                                                data-bs-ride="carousel">
+                                            <div id="carousel_{{ $loop->index }}" class="mt-2 carousel slide flex motion-safe:hover:scale-[1.05]" data-bs-ride="carousel">
                                                 <div class="carousel-inner">
                                                     @foreach ($about->hotelFiles->chunk(2) as $index => $chunk)
                                                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                                             <div class="grid grid-cols-2 gap-2">
                                                                 @foreach ($chunk as $imagen)
-                                                                    <div
-                                                                        class="{{ count($chunk) === 1 ? 'col-span-2 flex items-center justify-center' : '' }}">
+                                                                    <div class="{{ count($chunk) === 1 ? 'col-span-2 flex items-center justify-center' : '' }}">
                                                                         <img src="{{ asset('storage/' . $imagen->file_path) }}"
-                                                                            class="block object-cover h-80 w-max sm:rounded-lg rounded-md border-2 border-indigo-100 {{ count($chunk) === 1 ? 'mx-auto' : '' }}"
+                                                                            class="block object-cover h-80 {{ count($chunk) === 1 ? 'w-full' : 'w-max sm:rounded-lg rounded-md' }} border-2 border-indigo-100 {{ count($chunk) === 1 ? 'mx-auto' : '' }}"
                                                                             alt="...">
                                                                     </div>
                                                                 @endforeach
@@ -69,17 +66,16 @@
                                                     @endforeach
                                                 </div>
                                                 <!-- Botones de control del carousel -->
-                                                <button class="carousel-control-prev" type="button"
-                                                    data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="prev">
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Previous</span>
                                                 </button>
-                                                <button class="carousel-control-next" type="button"
-                                                    data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="next">
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="next">
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Next</span>
                                                 </button>
                                             </div>
+
 
 
                                             <div

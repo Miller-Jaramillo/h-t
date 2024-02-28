@@ -4,6 +4,7 @@ namespace App\Livewire\Administrador\About;
 
 use App\Models\About;
 use App\Models\Room;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -52,7 +53,8 @@ class AboutShowComponent extends Component
     public function render()
     {
         $abouts = About::all();
-        return view('livewire.administrador.about.about-show-component', ['abouts' => $abouts]);
+        $users = User::all();
+        return view('livewire.administrador.about.about-show-component', ['abouts' => $abouts, 'users' => $users]);
     }
 
     public function openShowForm()
