@@ -36,9 +36,17 @@
                                             class="dark:text-gray-200 text-gray-500  dark:font-medium uppercase tracking-wide flex justify-center">
                                             {{ $room->name }}
                                         </x-label>
-                                        <div id="carousel_{{ $loop->index }}"
-                                            class="mt-2 carousel slide flex motion-safe:hover:scale-[1.05] "
-                                            data-bs-ride="carousel">
+
+
+
+
+
+
+
+
+
+
+                                        <div id="carousel_{{ $loop->index }}" class="mt-2 carousel slide motion-safe:hover:scale-[1.05]" data-bs-ride="carousel" data-bs-interval="3000">
                                             <div class="carousel-inner">
                                                 @foreach ($room->files as $index => $imagen)
                                                     <div class="carousel-item {{ $index === 0 ? 'active' : 'flex items-center justify-center' }}">
@@ -48,18 +56,46 @@
                                                     </div>
                                                 @endforeach
                                             </div>
-                                            <!-- Botones de control del carousel -->
-                                            <button class="carousel-control-prev" type="button"
-                                                data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Previous</span>
-                                            </button>
-                                            <button class="carousel-control-next" type="button"
-                                                data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Next</span>
-                                            </button>
                                         </div>
+
+                                        <style>
+                                            /* Ocultar los botones de control */
+                                            .carousel-control-prev, .carousel-control-next {
+                                                display: none;
+                                            }
+                                        </style>
+
+                                        <script>
+                                            // Activar el cambio automático de diapositivas
+                                            var carousels = document.querySelectorAll('.carousel');
+                                            carousels.forEach(function(carousel) {
+                                                var carouselInstance = new bootstrap.Carousel(carousel, {
+                                                    interval: parseInt(carousel.getAttribute('data-bs-interval')),
+                                                    wrap: true
+                                                });
+                                            });
+                                        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                                         <div class="py-2 px-3">
                                             <x-label class="flex justify-left h-16 overflow-hidden">

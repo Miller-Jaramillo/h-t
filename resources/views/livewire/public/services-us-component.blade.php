@@ -68,7 +68,8 @@
                                                 {{ $service->description }}
                                             </x-label>
 
-                                         
+                                
+                                        </div>
 
                                         <hr class="my-3 border-gray-700 sm:mx-auto dark:bg-gray-100 lg:my-3" />
 
