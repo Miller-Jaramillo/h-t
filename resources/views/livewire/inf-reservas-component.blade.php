@@ -39,66 +39,33 @@
 
 
 
-
-
-
-
-
-
-
-                                        <div id="carousel_{{ $loop->index }}" class="mt-2 carousel slide motion-safe:hover:scale-[1.05]" data-bs-ride="carousel" data-bs-interval="3000">
+                                        <div id="carousel_{{ $loop->index }}" class="mt-2 carousel slide flex motion-safe:hover:scale-[1.05] carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
                                             <div class="carousel-inner">
                                                 @foreach ($room->files as $index => $imagen)
-                                                    <div class="carousel-item {{ $index === 0 ? 'active' : 'flex items-center justify-center' }}">
+                                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                                         <img src="{{ asset('storage/' . $imagen->ruta) }}"
-                                                            class="block object-cover h-80 w-300 sm:rounded-lg rounded-md border-2 border-indigo-100"
+                                                            class="block object-cover w-full h-full sm:rounded-lg rounded-md border-2 border-indigo-100"
                                                             alt="...">
                                                     </div>
                                                 @endforeach
                                             </div>
+                                            <!-- Botones de control del carousel -->
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
                                         </div>
-
-                                        <style>
-                                            /* Ocultar los botones de control */
-                                            .carousel-control-prev, .carousel-control-next {
-                                                display: none;
-                                            }
-                                        </style>
-
-                                        <script>
-                                            // Activar el cambio automático de diapositivas
-                                            var carousels = document.querySelectorAll('.carousel');
-                                            carousels.forEach(function(carousel) {
-                                                var carouselInstance = new bootstrap.Carousel(carousel, {
-                                                    interval: parseInt(carousel.getAttribute('data-bs-interval')),
-                                                    wrap: true
-                                                });
-                                            });
-                                        </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 
                                         <div class="py-2 px-3">
-                                            <x-label class="flex justify-left h-16 overflow-hidden">
+                                            <x-label class="flex justify-left">
                                                 Descripcion: {{ $room->description }}
                                             </x-label>
 
@@ -108,6 +75,10 @@
 
                                             <x-label class="flex justify-left">
                                                 Habitaciones disponibles: {{ $room->no_room }}
+                                            </x-label>
+
+                                            <x-label class="flex justify-left">
+                                                Si te quedas despues de las 9:00AM te incluye desayuno
                                             </x-label>
 
                                         </div>
