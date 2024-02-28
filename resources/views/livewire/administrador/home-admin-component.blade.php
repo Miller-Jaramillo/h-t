@@ -9,10 +9,22 @@
 
 
 
-             <label
-                 class="flex justify-center mx-auto max-w-6xl pb-3  py-2 px-2 text-2xl uppercase font-bold dark:font-bold text-gray-900 dark:text-gray-200">BIENVENIDO
-                 A LA FAMILIA TERRANOVA
-             </label>
+             <div class="mt-5 flex justify-center">
+
+                 @foreach ($users as $user)
+                     @if ($user->slogan != null)
+                         <label
+                             class="flex justify-center mx-auto max-w-6xl pb-3  py-2 px-2 text-2xl uppercase font-bold dark:font-bold text-gray-900 dark:text-gray-200">
+                             {{ $user->slogan }}
+                         </label>
+                     @else
+                         <label
+                             class="flex justify-center mx-auto max-w-6xl pb-3  py-2 px-2 text-2xl uppercase font-bold dark:font-bold text-gray-900 dark:text-gray-200">
+                             Bienvenido Craftyniano administrador 👽
+                         </label>
+                     @endif
+                 @endforeach
+             </div>
              <div>
 
 
@@ -33,6 +45,23 @@
                      Habitaciones</x-label>
 
                  @livewire('inf-reservas-component')
+             </div>
+
+             <div class="mt-5 flex justify-center">
+
+                 @foreach ($users as $user)
+                     @if ($user->slogan != null)
+                         <label
+                             class="flex justify-center mx-auto max-w-6xl pb-3  py-2 px-2 text-2xl uppercase font-bold dark:font-bold text-gray-900 dark:text-gray-200">
+                             {{ $user->final_slogan }}
+                         </label>
+                     @else
+                         <label
+                             class="flex justify-center mx-auto max-w-6xl pb-3  py-2 px-2 text-xl uppercase font-bold dark:font-bold text-gray-900 dark:text-gray-200">
+                             Hasta pronto Craftyniano 👋
+                         </label>
+                     @endif
+                 @endforeach
              </div>
 
              @include('footer-admin')
