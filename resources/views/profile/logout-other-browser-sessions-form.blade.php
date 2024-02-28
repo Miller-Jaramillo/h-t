@@ -52,7 +52,7 @@
         @endif
 
         <div class="flex items-center mt-5">
-            <x-button wire:click="confirmLogout" wire:loading.attr="disabled">
+            <x-button class="dark:bg-green-300 bg-green-600" wire:click="confirmLogout" wire:loading.attr="disabled">
                 {{ __('Cerrar sesión en otras sesiones del navegador') }}
             </x-button>
 

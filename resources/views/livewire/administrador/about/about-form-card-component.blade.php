@@ -11,7 +11,7 @@
 
 
                         {{-- titulo formulario --}}
-                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6 flex-row mt-5">
+                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6 flex-row mt-5 ">
 
                             <div class="border-b border-gray-100  ">
                                 <h2

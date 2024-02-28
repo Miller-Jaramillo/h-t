@@ -32,7 +32,7 @@
             {{ __('Gusrdado.') }}
         </x-action-message>
 
-        <x-button>
+        <x-button class="dark:bg-green-300 bg-green-600">
             {{ __('Guardar') }}
         </x-button>
     </x-slot>

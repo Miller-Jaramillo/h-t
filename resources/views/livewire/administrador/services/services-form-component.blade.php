@@ -9,9 +9,8 @@
                 <div class="mt-5 max-w-6xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6 pb-5">
                     <div class=" max-w-5xl mx-auto sm:px-6 lg:px-20 px-4 sm:px-6  ">
                         <div
-                            class="pb-3 bg-white dark:bg-gray-900 overflow-hidden shadow-xl  sm:rounded-xl rounded-xl
-                                    border border-b-indigo-400 border-l-indigo-400 border border-t-emerald-400 border-r-emerald-400 pb-2
-                                    dark:border-b-indigo-900 dark:border-l-indigo-900 dark:border-t-emerald-900 dark:border-r-emerald-900">
+                            class="pb-3 bg-gray-50 dark:bg-blue-950 overflow-hidden shadow-xl  sm:rounded-xl rounded-xl
+                                    ">
 
                             <div class=" max-w-7xl mx-auto sm:px-6 lg:px-20 px-4 sm:px-6  ">
 
@@ -116,7 +115,7 @@
                                                 class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50">
                                                 Cancelar
                                             </button>
-                                            <button type="submit">Guardar</button>
+                                            <x-button class="ml-2 dark:bg-green-400 bg-green-600" type="submit">Guardar</x-button>
                                         </div>
                                     </form>
 

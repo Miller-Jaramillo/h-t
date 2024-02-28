@@ -1,4 +1,4 @@
-<x-form-section submit="updateRedes">
+<x-form-section submit="updatePersonaliza">
     <x-slot name="title">
         {{ __('Personaliza') }}
     </x-slot>
@@ -11,13 +11,13 @@
     <x-slot name="form">
         <div class="col-span-6 sm:col-span-4">
             <x-label for="slogan" value="{{ __('Slogan principal') }}" />
-            <x-input id="slogan" type="text" class="mt-1 block w-full" wire:model="state.slogan" autocomplete="current-password" />
+            <x-input id="slogan" type="text" class="mt-1 block w-full" wire:model="slogan" autocomplete="current-password" />
             <x-input-error for="slogan" class="mt-2" />
         </div>
 
         <div class="col-span-6 sm:col-span-4">
             <x-label for="final_slogan" value="{{ __('Slogan Final') }}" />
-            <x-input id="final_slogan" type="text" class="mt-1 block w-full" wire:model="state.final_slogan" autocomplete="new-final_slogan" />
+            <x-input id="final_slogan" type="text" class="mt-1 block w-full" wire:model="final_slogan" autocomplete="new-final_slogan" />
             <x-input-error for="final_slogan" class="mt-2" />
         </div>
 
@@ -30,7 +30,7 @@
             {{ __('Guardado.') }}
         </x-action-message>
 
-        <x-button>
+        <x-button class="dark:bg-green-300 bg-green-600">
             {{ __('Guardar') }}
         </x-button>
     </x-slot>
