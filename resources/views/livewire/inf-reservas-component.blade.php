@@ -41,7 +41,7 @@
                                             data-bs-ride="carousel">
                                             <div class="carousel-inner">
                                                 @foreach ($room->files as $index => $imagen)
-                                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                    <div class="carousel-item {{ $index === 0 ? 'active' : 'flex items-center justify-center' }}">
                                                         <img src="{{ asset('storage/' . $imagen->ruta) }}"
                                                             class="block object-cover h-80 w-300 sm:rounded-lg rounded-md border-2 border-indigo-100"
                                                             alt="...">
@@ -62,7 +62,7 @@
                                         </div>
 
                                         <div class="py-2 px-3">
-                                            <x-label class="flex justify-left">
+                                            <x-label class="flex justify-left h-16 overflow-hidden">
                                                 Descripcion: {{ $room->description }}
                                             </x-label>
 
@@ -72,10 +72,6 @@
 
                                             <x-label class="flex justify-left">
                                                 Habitaciones disponibles: {{ $room->no_room }}
-                                            </x-label>
-
-                                            <x-label class="flex justify-left">
-                                                Si te quedas despues de las 9:00AM te incluye desayuno
                                             </x-label>
 
                                         </div>

@@ -68,14 +68,7 @@
                                                 {{ $service->description }}
                                             </x-label>
 
-                                            <x-label class="flex justify-left ">
-                                                Estado: <span class="text-green-500">{{ $service->status }}</span>
-                                            </x-label>
-
-                                            <x-label class="flex justify-left">
-                                                {{ $service->happy_message }}
-                                            </x-label>
-                                        </div>
+                                         
 
                                         <hr class="my-3 border-gray-700 sm:mx-auto dark:bg-gray-100 lg:my-3" />
 
