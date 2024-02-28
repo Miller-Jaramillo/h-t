@@ -57,7 +57,7 @@
                                                                 @foreach ($chunk as $imagen)
                                                                     <div class="{{ count($chunk) === 1 ? 'col-span-2 flex items-center justify-center' : '' }}">
                                                                         <img src="{{ asset('storage/' . $imagen->file_path) }}"
-                                                                            class="block object-cover h-80 {{ count($chunk) === 1 ? 'w-full' : 'w-max sm:rounded-lg rounded-md' }} border-2 border-indigo-100 {{ count($chunk) === 1 ? 'mx-auto' : '' }}"
+                                                                            class="block object-cover object-contain h-80 {{ count($chunk) === 1 ? 'w-full' : 'w-max sm:rounded-lg rounded-md' }} border-2 border-indigo-100 {{ count($chunk) === 1 ? 'mx-auto' : '' }}"
                                                                             alt="...">
                                                                     </div>
                                                                 @endforeach

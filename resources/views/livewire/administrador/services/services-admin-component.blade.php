@@ -85,12 +85,12 @@
                                             </div>
 
                                             <div class="py-2 px-3">
-                                                <x-label class="flex justify-left">
+                                                <x-label class="flex justify-left h-16 overflow-hidden text-center">
                                                     Descripcion: {{ $service->description }}
                                                 </x-label>
 
-                                                <x-label class="flex justify-left">
-                                                    Huespedes permitidos: {{ $service->status }}
+                                                <x-label class="flex justify-left ">
+                                                    Estado: <span class="text-green-500">{{ $service->status }}</span>
                                                 </x-label>
 
                                                 <x-label class="flex justify-left">

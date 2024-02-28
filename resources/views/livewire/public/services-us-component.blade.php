@@ -17,84 +17,77 @@
     <div>
         @if ($services->count())
             <!-- Contenido del carousel -->
-            <div
-                class="mx-auto max-w-5xl  px-10 sm:px-6 lg:px-2  shadow-xl border-t border-b border-l border-r
-                border-l-green-100 border-t-blue-100 border-b-pink-100 border-r-yellow-100
-                rounded-xl dark:border-gray-950
-                bg-gradient-to-r from-blue-100 to- dark:from-gray-500 dark:to-blue-950 ">
-                <div class="mx-auto max-w-2xl py-2 sm:py-2 lg:max-w-none ">
+            <div class="mx-auto max-w-5xl px-10 sm:px-6 lg:px-2 shadow-xl border-t border-b border-l border-r
+            border-l-green-100 border-t-blue-100 border-b-pink-100 border-r-yellow-100
+            rounded-xl dark:border-gray-950
+            bg-gradient-to-r from-blue-100 to- dark:from-gray-500 dark:to-blue-950 ">
+            <div class="mx-auto max-w-2xl py-2 sm:py-2 lg:max-w-none ">
 
-                    <div class=" lg:grid lg:grid-cols-3 lg:gap-x-1 lg:space-y-0">
-                        @foreach ($services as $service)
-                            <div class="group relative ">
-                                <div class="max-w-7xl mx-auto sm:px-2 lg:px-2 px-1 sm:px-2 py-1">
-                                    <div
-                                        class="bg-gradient-to-br from-neutral-50 via-blue-50 to-blue-100 dark:from-neutral-950 dark:via-slate-900 dark:to-blue-900
-                                         overflow-hidden shadow-xl sm:rounded-xl rounded-xl
+                <div class="lg:grid lg:grid-cols-3 lg:gap-x-1 lg:space-y-0">
+                    @foreach ($services as $service)
+                        <div class="group relative ">
+                            <div class="max-w-7xl mx-auto sm:px-2 lg:px-2 px-1 sm:px-2 py-1">
+                                <div
+                                    class="bg-gradient-to-br from-neutral-50 via-blue-50 to-blue-100 dark:from-neutral-950 dark:via-slate-900 dark:to-blue-900
+                                    overflow-hidden shadow-xl sm:rounded-xl rounded-xl
+                                    bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 ">
+                                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-4 px-4 sm:px-6 py-2 ">
+                                        <x-label
+                                            class="dark:text-gray-200 text-gray-500 dark:font-medium uppercase tracking-wide flex justify-center">
+                                            {{ $service->name }}
+                                        </x-label>
 
-                                             bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 ">
-                                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-4 px-4 sm:px-6 py-2 ">
-                                            <x-label
-                                                class="dark:text-gray-200 text-gray-500  dark:font-medium uppercase tracking-wide flex justify-center">
-                                                {{ $service->name }}
+                                        <div id="carousel_{{ $loop->index }}"
+                                            class="mt-2 carousel slide flex motion-safe:hover:scale-[1.05]  "
+                                            data-bs-ride="carousel">
+                                            <div class="carousel-inner ">
+                                                @foreach ($service->services as $index => $imagen)
+                                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                        <img src="{{ asset('storage/' . $imagen->file_path) }}"
+                                                            class="block object-cover rounded-full h-72 w-72 border-2 border-indigo-100"
+                                                            alt="...">
+
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            <!-- Botones de control del carousel -->
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="py-2 px-3">
+                                            <x-label class="flex justify-left h-16 overflow-hidden text-center">
+                                                {{ $service->description }}
                                             </x-label>
 
+                                            <x-label class="flex justify-left ">
+                                                Estado: <span class="text-green-500">{{ $service->status }}</span>
+                                            </x-label>
 
-                                            <div id="carousel_{{ $loop->index }}"
-                                                class="mt-2 carousel slide flex motion-safe:hover:scale-[1.05]  "
-                                                data-bs-ride="carousel">
-                                                <div class="carousel-inner ">
-                                                    @foreach ($service->services as $index => $imagen)
-                                                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                                            <img src="{{ asset('storage/' . $imagen->file_path) }}"
-                                                                class="block object-cover rounded-full  h-72 w-72  border-2 border-indigo-100"
-                                                                alt="...">
-
-
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                                <!-- Botones de control del carousel -->
-                                                <button class="carousel-control-prev" type="button"
-                                                    data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="prev">
-                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Previous</span>
-                                                </button>
-                                                <button class="carousel-control-next" type="button"
-                                                    data-bs-target="#carousel_{{ $loop->index }}" data-bs-slide="next">
-                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Next</span>
-                                                </button>
-                                            </div>
-
-                                            <div class="py-2 px-3">
-
-                                                <x-label class="flex justify-left">
-                                                    Descripcion: {{ $service->description }}
-                                                </x-label>
-
-                                                <x-label class="flex justify-left">
-                                                    Estado: {{ $service->status }}
-                                                </x-label>
-
-                                                <x-label class="flex justify-left">
-                                                    {{ $service->happy_message }}
-                                                </x-label>
-
-
-
-                                            </div>
-
-                                            <hr class="my-3 border-gray-700 sm:mx-auto dark:bg-gray-100 lg:my-3" />
-
+                                            <x-label class="flex justify-left">
+                                                {{ $service->happy_message }}
+                                            </x-label>
                                         </div>
+
+                                        <hr class="my-3 border-gray-700 sm:mx-auto dark:bg-gray-100 lg:my-3" />
+
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
+        </div>
+
         @else
             <div
                 class="mx-auto max-w-5xl  px-10 sm:px-6 lg:px-2  shadow-xl border-t border-b border-l border-r
