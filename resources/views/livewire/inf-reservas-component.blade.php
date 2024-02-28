@@ -65,7 +65,7 @@
 
 
                                         <div class="py-2 px-3">
-                                            <x-label class="flex justify-left">
+                                            <x-label class="flex justify-left h-16 overflow-hidden">
                                                 Descripcion: {{ $room->description }}
                                             </x-label>
 
@@ -77,9 +77,7 @@
                                                 Habitaciones disponibles: {{ $room->no_room }}
                                             </x-label>
 
-                                            <x-label class="flex justify-left">
-                                                Si te quedas despues de las 9:00AM te incluye desayuno
-                                            </x-label>
+
 
                                         </div>
 
