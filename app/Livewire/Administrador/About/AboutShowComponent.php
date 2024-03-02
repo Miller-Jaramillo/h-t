@@ -118,15 +118,18 @@ class AboutShowComponent extends Component
 
             ]);
 
-
+            // Eliminar las imágenes antiguas de la base de datos y del almacenamiento
+            $about->hotelFiles()->delete();
+            foreach ($about->hotelFiles as $file) {
+                Storage::disk('public')->delete($file->file_path);
+            }
 
 
 
             foreach ($this->files as $file) {
                 $fileType = Str::startsWith($file->getMimeType(), 'video') ? 'video' : 'image';
                 $path = $file->store('hotel-files', 'public');
-                $about = About::findOrFail($this->editAboutId);
-                $about->hotelFiles()->update([
+                $about->hotelFiles()->create([
                     'file_path' => $path,
                     'file_type' => $fileType,
                 ]);
