@@ -44,7 +44,7 @@
                                                 @foreach ($room->files as $index => $imagen)
                                                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                                         <img src="{{ asset('storage/' . $imagen->ruta) }}"
-                                                            class="block object-cover w-full h-full sm:rounded-lg rounded-md border-2 border-indigo-100"
+                                                            class="block object-cover w-full h-80 sm:rounded-lg rounded-md border-2 border-indigo-100"
                                                             alt="...">
                                                     </div>
                                                 @endforeach
@@ -65,7 +65,7 @@
 
 
                                         <div class="py-2 px-3">
-                                            <x-label class="flex justify-left h-16 overflow-hidden">
+                                            <x-label class="flex justify-left h-10 overflow-hidden">
                                                 Descripcion: {{ $room->description }}
                                             </x-label>
 

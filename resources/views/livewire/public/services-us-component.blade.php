@@ -64,11 +64,11 @@
                                         </div>
 
                                         <div class="py-2 px-3">
-                                            <x-label class="flex justify-left h-16 overflow-hidden text-center">
+                                            <x-label class="flex justify-left h-10 overflow-hidden text-center">
                                                 {{ $service->description }}
                                             </x-label>
 
-                                
+
                                         </div>
 
                                         <hr class="my-3 border-gray-700 sm:mx-auto dark:bg-gray-100 lg:my-3" />
